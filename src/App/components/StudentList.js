@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { baseURL } from '../../server';
 import StudentTag from './StudentTag';
 import './StudentList.scss';
+import TagPlaceholder from './TagPlaceholder';
 
 class StudentList extends Component {
   constructor(props) {
@@ -29,6 +30,10 @@ class StudentList extends Component {
 
   render() {
     const { students } = this.state;
+    const placeholders = [];
+    for (let i = 0; i < Math.max(students.length, 20); i += 1) {
+      placeholders.push(i);
+    }
     return (
       <div className="StudentList">
         <div className="title">
@@ -37,6 +42,9 @@ class StudentList extends Component {
         <div className="student-list">
           {students.map((student) => (
             <StudentTag key={student.id} student={student} />
+          ))}
+          {placeholders.map((index) => (
+            <TagPlaceholder key={index} />
           ))}
         </div>
       </div>
