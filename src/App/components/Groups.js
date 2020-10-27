@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GroupList from './GroupList';
 import './Groups.scss';
 
 class Groups extends Component {
@@ -17,6 +18,7 @@ class Groups extends Component {
           <h3 className='title-text'>分组列表</h3>
           <div className={`btn ${clickable ? 'btn-active' : ''} group-btn`}>分组学员</div>
         </div>
+        <GroupList />
       </div>
     );
   }
