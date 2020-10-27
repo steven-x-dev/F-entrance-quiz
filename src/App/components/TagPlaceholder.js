@@ -1,6 +1,5 @@
 import React from 'react';
-import './TagPlaceholder.scss';
 
-const TagPlaceholder = () => <div className="tag TagPlaceholder" />;
+const TagPlaceholder = () => <div className="tag tag-placeholder" />;
 
 export default TagPlaceholder;
