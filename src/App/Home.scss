@@ -1,0 +1,17 @@
+@import '../style/variables';
+
+.Home {
+  background-color: $bg-gray;
+  padding: 10px;
+}
+
+.tag {
+  width: 7em;
+  height: 2.5em;
+  margin: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
