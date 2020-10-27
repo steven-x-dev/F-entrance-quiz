@@ -3,15 +3,37 @@
 .Home {
   background-color: $bg-gray;
   padding: 10px;
-}
 
-.tag {
-  width: 7em;
-  height: 2.5em;
-  margin: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title .title-text {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .btn {
+    width: 8em;
+    height: 3em;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tag {
+    width: 7em;
+    height: 2.5em;
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
