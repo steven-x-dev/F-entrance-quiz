@@ -72,7 +72,11 @@ class AddStudentTag extends Component {
         return Promise.reject(response);
       })
       .then(() => this.props.notifyRefresh(this.restoreInput))
-      .catch(() => this.restoreInput());
+      .catch(() => {
+        this.setState({
+          submitting: false,
+        });
+      });
   };
 
   render() {
