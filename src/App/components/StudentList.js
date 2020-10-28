@@ -15,6 +15,10 @@ class StudentList extends Component {
   }
 
   componentDidMount() {
+    this.refreshStudentList();
+  }
+
+  refreshStudentList = (onAddStudentFinishedCallback) => {
     fetch(`${baseURL}/students`, {
       method: 'GET',
     })
@@ -25,10 +29,23 @@ class StudentList extends Component {
         return Promise.reject(response);
       })
       .then((students) => {
-        this.setState({ students });
+        this.setState(
+          {
+            students,
+          },
+          () => {
+            if (onAddStudentFinishedCallback) {
+              onAddStudentFinishedCallback();
+            }
+          }
+        );
       })
-      .catch(() => {});
-  }
+      .catch(() => {
+        if (onAddStudentFinishedCallback) {
+          onAddStudentFinishedCallback();
+        }
+      });
+  };
 
   render() {
     const { students } = this.state;
@@ -41,7 +58,7 @@ class StudentList extends Component {
           {students.map((student) => (
             <StudentTag key={student.id} student={student} />
           ))}
-          <AddStudentTag />
+          <AddStudentTag notifyRefresh={this.refreshStudentList} />
           {placeholders.map((index) => (
             <TagPlaceholder key={index} />
           ))}
