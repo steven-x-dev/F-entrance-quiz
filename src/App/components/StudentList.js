@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { baseURL } from '../../server';
 import StudentTag from './StudentTag';
+import AddStudentTag from './AddStudentTag';
 import TagPlaceholder from './TagPlaceholder';
 import placeholders from './placeholders';
 import './StudentList.scss';
@@ -40,6 +41,7 @@ class StudentList extends Component {
           {students.map((student) => (
             <StudentTag key={student.id} student={student} />
           ))}
+          <AddStudentTag />
           {placeholders.map((index) => (
             <TagPlaceholder key={index} />
           ))}

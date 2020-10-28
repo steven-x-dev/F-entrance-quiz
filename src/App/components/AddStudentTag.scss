@@ -1,0 +1,24 @@
+@import '../../style/variables';
+
+.AddStudentTag {
+  .btn-add-student {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $dark-gray;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $dark-gray;
+    box-sizing: border-box;
+    text-align: center;
+  }
+}

@@ -22,8 +22,8 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 
   .btn-active {
@@ -37,8 +37,9 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .tag.tag-placeholder {
