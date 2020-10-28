@@ -50,7 +50,7 @@ class StudentList extends Component {
   render() {
     const { students } = this.state;
     return (
-      <div className="StudentList">
+      <section className="StudentList">
         <div className="title">
           <h3 className="title-text">学员列表</h3>
         </div>
@@ -63,7 +63,7 @@ class StudentList extends Component {
             <TagPlaceholder key={index} />
           ))}
         </div>
-      </div>
+      </section>
     );
   }
 }

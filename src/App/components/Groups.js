@@ -65,7 +65,7 @@ class Groups extends Component {
   render() {
     const { clickable, groups } = this.state;
     return (
-      <div className="Groups">
+      <section className="Groups">
         <div className="title">
           <h3 className="title-text">分组列表</h3>
           <div
@@ -79,7 +79,7 @@ class Groups extends Component {
           </div>
         </div>
         <GroupList groups={groups} />
-      </div>
+      </section>
     );
   }
 }
