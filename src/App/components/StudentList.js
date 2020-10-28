@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { baseURL } from '../../server';
 import StudentTag from './StudentTag';
-import './StudentList.scss';
 import TagPlaceholder from './TagPlaceholder';
+import placeholders from './placeholders';
+import './StudentList.scss';
 
 class StudentList extends Component {
   constructor(props) {
@@ -30,10 +31,6 @@ class StudentList extends Component {
 
   render() {
     const { students } = this.state;
-    const placeholders = [];
-    for (let i = 0; i < Math.max(students.length, 20); i += 1) {
-      placeholders.push(i);
-    }
     return (
       <div className="StudentList">
         <div className="title">

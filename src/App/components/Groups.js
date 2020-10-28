@@ -36,6 +36,7 @@ class Groups extends Component {
   }
 
   handleShuffle = () => {
+    if (!this.state.clickable) return;
     this.setState({
       clickable: false,
     });
