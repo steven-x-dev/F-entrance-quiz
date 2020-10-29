@@ -50,11 +50,11 @@ class StudentList extends Component {
   render() {
     const { students } = this.state;
     return (
-      <section className="StudentList">
-        <div className="title">
-          <h3 className="title-text">学员列表</h3>
+      <section className='StudentList'>
+        <div className='title'>
+          <h3 className='title-text'>学员列表</h3>
         </div>
-        <div className="student-list">
+        <div className='student-list'>
           {students.map((student) => (
             <StudentTag key={student.id} student={student} />
           ))}
