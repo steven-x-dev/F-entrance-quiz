@@ -1,0 +1,26 @@
+@import '../../style/variables';
+
+.Group {
+  border: 1px solid $gray;
+  margin: 20px 0;
+
+  .group-name {
+    color: white;
+    background-color: $gray;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .group-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+}
+
+.Group:last-child {
+  margin-bottom: 0;
+}

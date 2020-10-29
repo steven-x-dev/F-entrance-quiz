@@ -8,7 +8,7 @@ class Groups extends Component {
     super(props);
     this.state = {
       clickable: false,
-      groups: []
+      groups: [],
     };
   }
 
@@ -19,7 +19,7 @@ class Groups extends Component {
       .then((response) => {
         if (response.status === 200) {
           this.setState({
-            clickable: true
+            clickable: true,
           });
           return response.json();
         }
@@ -30,14 +30,15 @@ class Groups extends Component {
       })
       .catch(() => {
         this.setState({
-          clickable: true
+          clickable: true,
         });
       });
   }
 
   handleShuffle = () => {
+    if (!this.state.clickable) return;
     this.setState({
-      clickable: false
+      clickable: false,
     });
     fetch(`${baseURL}/groups`, {
       method: 'PATCH',
@@ -45,7 +46,7 @@ class Groups extends Component {
       .then((response) => {
         if (response.status === 200) {
           this.setState({
-            clickable: true
+            clickable: true,
           });
           return response.json();
         }
@@ -56,26 +57,29 @@ class Groups extends Component {
       })
       .catch(() => {
         this.setState({
-          clickable: true
+          clickable: true,
         });
       });
-  }
+  };
 
   render() {
     const { clickable, groups } = this.state;
     return (
-      <div className='Groups'>
-        <div className='title'>
-          <h3 className='title-text'>分组列表</h3>
+      <section className="Groups">
+        <div className="title">
+          <h3 className="title-text">分组列表</h3>
           <div
+            role="button"
+            tabIndex={0}
             className={`btn ${clickable ? 'btn-active' : ''} group-btn`}
             onClick={this.handleShuffle}
+            onKeyDown={this.handleShuffle}
           >
             分组学员
           </div>
         </div>
         <GroupList groups={groups} />
-      </div>
+      </section>
     );
   }
 }
