@@ -7,12 +7,14 @@ class Groups extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      // TODO GTB-工程实践: - 命名不合理
       clickable: false,
       groups: [],
     };
   }
 
   componentDidMount() {
+    // TODO GTB-工程实践: * 建议把数据请求提取到单独的service
     fetch(`${baseURL}/groups`, {
       method: 'GET',
     })
@@ -65,6 +67,7 @@ class Groups extends Component {
   render() {
     const { clickable, groups } = this.state;
     return (
+      // TODO GTB-知识点: * 没有使用语义标签
       <section className="Groups">
         <div className="title">
           <h3 className="title-text">分组列表</h3>
